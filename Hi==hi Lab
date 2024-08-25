@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+string strcmp_case_insensitive(string j)
+{
+    for (int i = 0; i < j.length(); i++) 
+    {
+        j[i] = toupper(j[i]);
+    }
+    return j;
+}
+
+int main()
+{
+    string Hi;
+    string hi;
+    cout << "string 1: ";
+    cin >> Hi;
+    cout << "string 2: ";
+    cin >> hi;
+    if (strcmp_case_insensitive(Hi) == strcmp_case_insensitive(hi)) {
+        cout << "The comparison of "<<Hi<< " and "<<hi << " = 0";
+    }
+    if (strcmp_case_insensitive(Hi) > strcmp_case_insensitive(hi)) {
+        cout << "The comparison of "<<Hi<< " and "<<hi << " = 1";
+    }
+    if (strcmp_case_insensitive(Hi) < strcmp_case_insensitive(hi)) {
+        cout << "The comparison of " << Hi << " and " << hi << " = -1";
+    }
+    return 0;
+}
